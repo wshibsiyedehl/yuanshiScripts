@@ -1,0 +1,1977 @@
+game:GetService("StarterGui"):SetCore("SendNotification",{ Title = "原石"; Text ="欢迎:" .. game.GameId .. ".使用原石"; Duration = 2; })
+
+local OrionLib = loadstring(game:HttpGet("https://pastebin.com/raw/TDhCB0tb"))()
+
+local Window = OrionLib:MakeWindow({Name = "原石", HidePremium = false, SaveConfig = true,IntroText = "原神，启动", ConfigFolder = "原石"})
+
+local GL = Window:MakeTab({
+
+  Name = "玩家/功能/中心",
+
+  Icon = "rbxassetid://13133167047",
+
+  PremiumOnly = false
+
+})
+
+GL:AddParagraph("👇玩家👇","")
+
+GL:AddTextbox({
+
+    Name="生命",
+
+    Default = "",
+
+    Callback=function(Value)
+
+    game.Players.LocalPlayer.Character.Humanoid.Health=Value
+
+    end
+
+})
+
+GL:AddTextbox({
+
+  Name = "速度",
+
+  Default = "",
+
+  TextDisappear = true,
+
+  Callback = function(Value)
+
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+
+  end
+
+})
+
+ 
+
+GL:AddTextbox({
+
+  Name = "跳跃",
+
+  Default = "",
+
+  TextDisappear = true,
+
+  Callback = function(Value)
+
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
+
+  end
+
+})
+
+ 
+
+GL:AddTextbox({
+
+  Name = "重力",
+
+  Default = "",
+
+  TextDisappear = true,
+
+  Callback = function(Value)
+
+    game.Workspace.Gravity = Value
+
+  end
+
+})
+
+GL:AddButton({
+
+	Name = "飞行---温迪",
+
+	Callback = function()
+
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/wshibsiyedehl/FIy/main/fly/%E9%A3%9E%E8%A1%8C.lua?token=GHSAT0AAAAAACCTEPBSQFUHM4WWHL7PY254ZERRLYQ"))()
+
+    end
+
+})
+
+GL:AddButton({
+
+	Name = "穿墙［高频］",
+
+	Callback = function()
+
+local Workspace = game:GetService("Workspace")
+
+local Players = game:GetService("Players")
+
+local Clipon = true
+
+Stepped = game:GetService("RunService").Stepped:Connect(function()
+
+	if not Clipon == false then
+
+		for a, b in pairs(Workspace:GetChildren()) do
+
+        if b.Name == Players.LocalPlayer.Name then
+
+        for i, v in pairs(Workspace[Players.LocalPlayer.Name]:GetChildren()) do
+
+        if v:IsA("BasePart") then
+
+        v.CanCollide = false
+
+        end end end end
+
+	else
+
+		Stepped:Disconnect()
+
+	end
+
+end)
+
+  end
+
+})
+
+GL:AddToggle({
+
+  Name = "全亮",
+
+  Default = false,
+
+  Callback = function(Value)
+
+    if Value then
+
+      game.Lighting.Ambient = Color3.new(1, 1, 1)
+
+     else
+
+      game.Lighting.Ambient = Color3.new(0, 0, 0)
+
+    end
+
+  end
+
+})
+
+GL:AddParagraph("👇功能👇","")
+
+GL:AddButton({
+
+	Name = "SA工具",
+
+	Callback = function()
+
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/Bebo-Mods/BeboScripts/main/StandAwekening.lua"))()
+
+    end
+
+})
+
+GL:AddButton({
+
+	Name = "阿尔宙斯V3［UI］",
+
+	Callback = function()
+
+     loadstring(game: HttpGet("https://raw.githubusercontent.com/AZYsGithub/chillz-workshop/main/Arceus%20X%20V3"))() 
+
+	end
+
+})
+
+GL:AddButton({
+
+	Name = "甩人",
+
+	Callback = function()
+
+     loadstring(game:HttpGet("https://pastebin.com/raw/HAAY2rhe"))()
+
+	end
+
+})
+
+GL:AddButton({
+
+	Name = "键盘",
+
+	Callback = function()
+
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()
+
+    end
+
+})
+
+GL:AddButton({
+
+	Name = "防挂机制",
+
+	Callback = function()
+
+	print("Anti Afk On")
+
+		local vu = game:GetService("VirtualUser")
+
+		game:GetService("Players").LocalPlayer.Idled:connect(function()
+
+		   vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+
+		   wait(1)
+
+		   vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+
+		end)
+
+  	end
+
+})
+
+GL:AddParagraph("👇中心👇","")
+
+GL:AddButton({
+
+	Name = "国内脚本中心",
+
+	Callback = function()
+
+	 loadstring(game:HttpGet("\104\116\116\112\115\58\47\47\112\97\115\116\101\98\105\110\46\99\111\109\47\114\97\119\47\103\101\109\120\72\119\65\49"))()
+
+    end
+
+})
+
+GL:AddButton({
+
+	Name = "岩浆中心",
+
+	Callback = function()
+
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/accountnop/magmaisgay/main/magma", true))()
+
+    end
+
+})
+
+GL:AddButton({
+
+	Name = "Readme中心",
+
+	Callback = function()
+
+     loadstring(game:HttpGet('https://raw.githubusercontent.com/NeaPchX2/2XHUB-UPDBIG/main/README.md', true))()
+
+    end
+
+})
+
+ 
+
+GL:AddButton({
+
+	Name = "X中心",
+
+	Callback = function()
+
+     loadstring(game:HttpGet('https://raw.githubusercontent.com/sxnumz/Script/main/SxnumzHubFree.txt'))();
+
+    end
+
+})
+
+GL:AddButton({
+
+	Name = "东中心",
+
+	Callback = function()
+
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/Brineeee/EastHub/main/lua"))()
+
+    end
+
+})
+
+ 
+
+GL:AddButton({
+
+	Name = "千叶中心",
+
+	Callback = function()
+
+     loadstring(game:HttpGet('https://raw.githubusercontent.com/KindIhave/ChibaHuB/main/Chiba-BF.txt'))()
+
+    end
+
+})
+
+ 
+
+GL:AddButton({
+
+	Name = "纳尔中心",
+
+	Callback = function()
+
+	 loadstring(game:HttpGet("https://raw.githubusercontent.com/xOne2/One-x-HUB/main/README.md"))()
+
+   	end
+
+})
+
+GL:AddButton({
+
+	Name = "Putaya中心",
+
+	Callback = function()
+
+     loadstring(game:HttpGet(("https://raw.githubusercontent.com/Putaya/HITBOXKAK/main/PutayaFree"), true))()
+
+   	end
+         
+})
+
+local DOORS = Window:MakeTab({
+
+  Name = "DOORS:玩家/物品/其他",
+
+  Icon = "rbxassetid://13133167047",
+
+  PremiumOnly = false
+
+})
+
+DOORS:AddParagraph("👇玩家👇","")
+
+DOORS:AddButton({
+
+	Name = "自制ESP［汉化］",	Callback = function()
+
+     loadstring("\108\111\97\100\115\116\114\105\110\103\40\103\97\109\101\58\72\116\116\112\71\101\116\40\34\104\116\116\112\115\58\47\47\112\97\115\116\101\98\105\110\46\99\111\109\47\114\97\119\47\88\71\101\115\116\82\53\56\34\41\41\40\41\10")()
+
+    end
+
+})
+
+DOORS:AddButton({
+
+	Name = "增加速度",
+
+	Callback = function()
+
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 22
+
+    end
+
+})
+
+DOORS:AddToggle({
+
+	Name = "立即互动",
+
+	Default = false,
+
+    Flag = "InstantToggle",
+
+    Save = true
+
+})
+
+DOORS:AddButton({
+
+	Name = "全亮",
+
+	Callback = function()
+
+     loadstring(game:HttpGet("https://pastebin.com/raw/4LDKiJ5a"))()
+
+	end
+
+})
+
+game:GetService("ProximityPromptService").PromptButtonHoldBegan:Connect(function(prompt)
+
+    if OrionLib.Flags["InstantToggle"].Value == true then
+
+        fireproximityprompt(prompt)
+
+    end
+
+end)
+
+DOORS:AddToogle({
+
+	Name = "刷新实体时通知",
+
+	Callback = function()
+
+     loadstring(game:HttpGet("https://pastebin.com/raw/LWbspnUg"))()
+
+	end
+
+})
+
+DOORS:AddButton({
+
+	Name = "A-0无锁",
+
+	Callback = function()
+
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/wshibsiyedehl/gonn/main/A-0%20no%20key"))()
+
+	end
+
+})
+
+DOORS:AddButton({
+
+	Name = "无铁门",
+
+	Callback = function()
+
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/wshibsiyedehl/gonn/main/shan%20Doors2"))()
+
+	end
+
+})
+
+DOORS:AddToogle({
+
+	Name = "自动破解图书馆密码",
+
+	Callback = function()
+
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/wshibsiyedehl/gonn/main/zudong%20tushug"))()
+
+	end
+
+})
+
+DOORS:AddParagraph("👇物品👇","")
+
+DOORS:AddButton({
+
+    Name = "M4A1",
+
+    Callback = function ()
+
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/EntitySpawnr/main/M4A1.lua"))()
+
+    end
+
+})
+
+DOORS:AddButton({
+
+    Name = "木质十字架",
+
+    Callback = function ()
+
+	loadstring(game:HttpGet("https://pastebin.com/raw/WbNyVCiU"))()
+
+    end
+
+})
+
+DOORS:AddButton({
+
+    Name="维他命",
+
+    Callback = function()
+
+        local Vitamins = game:GetObjects("rbxassetid://11685698403")[1]
+
+        local idle = Vitamins.Animations:FindFirstChild("idle")
+
+        local open = Vitamins.Animations:FindFirstChild("open")
+
+        local tweenService = game:GetService("TweenService")
+
+        local sound_open = Vitamins.Handle:FindFirstChild("sound_open")
+
+        local char = game.Players.LocalPlayer.Character or game.Players.LocalPlayer.CharacteAdded:Wait()
+
+        local hum = char:WaitForChild("Humanoid")
+
+        local idleTrack = hum.Animator:LoadAnimation(idle)
+
+        local openTrack = hum.Animator:LoadAnimation(open)
+
+        local Durability = 35
+
+        local InTrans = false
+
+        local Duration = 10
+
+        local xUsed = tonumber(_G.VitaminsDurability)
+
+        local v1 = {};
+
+        function v1.AddDurability()
+
+            InTrans = true
+
+            hum:SetAttribute("SpeedBoost", 15)
+
+            wait(Duration)
+
+            InTrans = false
+
+            hum:SetAttribute("SpeedBoost", 0)
+
+        end
+
+        function v1.SetupVitamins()
+
+            Vitamins.Parent = game.Players.LocalPlayer.Backpack
+
+            Vitamins.Name = "维他命哈哈哈"
+
+            for slotNum, tool in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+
+                if tool.Name == "维他命哈哈哈" then
+
+                    local slot =game.Players.LocalPlayer.PlayerGui:WaitForChild("MainUI").MainFrame.Hotbar:FindFirstChild(slotNum)
+
+                    -- while task.wait() do
+
+                    --     slot.DurabilityNumber.Text = "x"..xUsed
+
+                    -- end
+
+                    -- slot.DurabilityNumber.Text = "x"..xUsed
+
+                    slot.DurabilityNumber.Visible = true
+
+                    slot.DurabilityNumber.Text = "x"..xUsed
+
+                    Vitamins.Unequipped:Connect(function()
+
+                        slot.DurabilityNumber.Visible = true
+
+                        slot.DurabilityNumber.Text = "x"..xUsed
+
+                    end)
+
+                    Vitamins.Equipped:Connect(function()
+
+                        slot.DurabilityNumber.Visible = true
+
+                    end)
+
+                    Vitamins.Activated:Connect(function()
+
+                        if not InTrans and xUsed > 0 then
+
+                            xUsed = xUsed - 1
+
+                            slot.DurabilityNumber.Visible = true
+
+                            slot.DurabilityNumber.Text = "x"..xUsed
+
+                            openTrack:Play()
+
+                            sound_open:Play()
+
+                    
+
+                            tweenService:Create(workspace.CurrentCamera, TweenInfo.new(0.2), {FieldOfView = 100}):Play()
+
+                            v1.AddDurability()
+
+                        end
+
+                    end)
+
+                end
+
+            end
+
+            Vitamins.Equipped:Connect(function()
+
+                idleTrack:Play()
+
+            end)
+
+            Vitamins.Unequipped:Connect(function()
+
+                idleTrack:Stop()
+
+            end)
+
+        end
+
+        v1.SetupVitamins()
+
+        function v1.AddLoop()
+
+            while task.wait() do
+
+                if InTrans then
+
+                    wait()
+
+                    hum.WalkSpeed = Durability
+
+                else
+
+                    hum.WalkSpeed = 16
+
+                end
+
+            end
+
+        end
+
+        while task.wait() do
+
+            v1.AddLoop()
+
+        end
+
+        return v1
+
+    end
+
+})
+
+DOORS:AddTextbox({
+
+	Name = "维他命数量",
+
+	PlaceholderText = "ex: 100",
+
+	RemoveTextAfterFocusLost = false,
+
+	Callback = function(Text)
+
+        local durability = tonumber(Text)
+
+        if durability then
+
+            _G.VitaminsDurability = Text
+
+        elseif not durability or durability == '0' then
+
+            Rayfield:Notify({
+
+                Title = "错误",
+
+                Content = "请输入一个有效的数字.",
+
+                Duration = 5,
+
+                Image = 4483362458,
+
+                Actions = {},
+
+            })
+
+        end
+
+	end
+
+})
+
+DOORS:AddButton({
+
+	Name = "错乱十字架",
+
+	Callback = function()
+
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/PiotrekMineRoblox/Bumble-crucifix/main/Bumble-crucifix"))()
+
+	end
+
+})
+
+DOORS:AddButton({
+
+	Name = "圣诞节十字架",
+
+	Callback = function()
+
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/PiotrekMineRoblox/Christmas-Crucifix/main/Christmas%20crucifix.lua"))()
+
+	end
+
+})
+
+DOORS:AddButton({
+
+	Name = "究极十字架",
+
+	Callback = function()
+
+        local shadow=game:GetObjects("rbxassetid://11498423088")[1]shadow.Parent = game.Players.LocalPlayer.Backpack
+
+	end
+
+})
+
+DOORS:AddButton({
+
+	Name = "Sccrech十字架",
+
+	Callback = function()
+
+     loadstring(game:HttpGet("https://pastebin.com/raw/W1AzELhb"))()
+
+	end
+
+})
+
+DOORS:AddButton({
+
+	Name = "ZEPSYY十字架",
+
+	Callback = function()
+
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/ZepsyyCodesLUA/Utilities/main/Crucifix"))()
+
+	end
+
+})
+
+DOORS:AddButton({
+
+	Name = "紫光十字架",
+
+	Callback = function()
+
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/K0t1n/Public/main/Purple%20Flashlight"))()
+
+	end
+
+})
+
+DOORS:AddButton({
+
+	Name = "万圣节十字架",
+
+	Callback = function()
+
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/Mye123/MyeWareHub/main/Halloween%20Crucifix"))()
+
+	end
+
+})
+
+DOORS:AddButton({
+
+	Name = "骷髅钥匙",
+
+	Callback = function()
+
+        local item = game:GetObjects("rbxassetid://11697889137")[1]item.Parent = game.Players.LocalPlayer.Backpack
+
+	end
+
+})
+
+DOORS:AddButton({
+
+	Name = "神圣手雷",
+
+	Callback = function()
+
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/MrNeRD0/Doors-Hack/main/HolyGrenadeByNerd.lua"))()
+
+	end
+
+})
+
+DOORS:AddParagraph("👇其他👇","")
+
+DOORS:AddButton({
+
+    Name = "刷新Rush",
+
+    Callback = function ()
+
+        local Creator = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors%20Entity%20Spawner/Source.lua"))()
+
+        -- Create entity
+
+        local entity = Creator.createEntity({
+
+            CustomName = "Rush", -- Custom name of your entity
+
+            Model = "https://github.com/Johnny39871/assets/blob/main/Rush.rbxm?raw=true", -- Can be GitHub file or rbxassetid
+
+            Speed = 100, -- Percentage, 100 = default Rush speed
+
+            DelayTime = 2, -- Time before starting cycles (seconds)
+
+            HeightOffset = 0,
+
+            CanKill = true,
+
+            KillRange = 25,
+
+            BreakLights = true,
+
+            BackwardsMovement = false,
+
+            FlickerLights = {
+
+                true, -- Enabled/Disabled
+
+                1, -- Time (seconds)
+
+            },
+
+            Cycles = {
+
+                Min = 1,
+
+                Max = 1,
+
+                WaitTime = 2,
+
+            },
+
+            CamShake = {
+
+                true, -- Enabled/Disabled
+
+                {3.5, 20, 0.1, 1}, -- Shake values (don't change if you don't know)
+
+                100, -- Shake start distance (from Entity to you)
+
+            },
+
+            Jumpscare = {
+
+                true, -- Enabled/Disabled
+
+                {
+
+                    Image1 = "rbxassetid://10483855823", -- Image1 url
+
+                    Image2 = "rbxassetid://10483999903", -- Image2 url
+
+                    Shake = true,
+
+                    Sound1 = {
+
+                        10483790459, -- SoundId
+
+                        { Volume = 0.5 }, -- Sound properties
+
+                    },
+
+                    Sound2 = {
+
+                        10483837590, -- SoundId
+
+                        { Volume = 0.5 }, -- Sound properties
+
+                    },
+
+                    Flashing = {
+
+                        true, -- Enabled/Disabled
+
+                        Color3.fromRGB(0, 0, 255), -- Color
+
+                    },
+
+                    Tease = {
+
+                        true, -- Enabled/Disabled
+
+                        Min = 4,
+
+                        Max = 4,
+
+                    },
+
+                },
+
+            },
+
+            CustomDialog = {"你死于Rush"}, -- Custom death message
+
+        })
+
+        
+
+        -----[[ Advanced ]]-----
+
+        entity.Debug.OnEntitySpawned = function(entityTable)
+
+            print("Entity has spawned:", entityTable.Model)
+
+        end
+
+        
+
+        entity.Debug.OnEntityDespawned = function(entityTable)
+
+            print("Entity has despawned:", entityTable.Model)
+
+        end
+
+        
+
+        entity.Debug.OnEntityStartMoving = function(entityTable)
+
+            print("Entity has started moving:", entityTable.Model)
+
+        end
+
+        
+
+        entity.Debug.OnEntityFinishedRebound = function(entityTable)
+
+            print("Entity has finished rebound:", entityTable.Model)
+
+        end
+
+        
+
+        entity.Debug.OnEntityEnteredRoom = function(entityTable, room)
+
+            print("Entity:", entityTable.Model, "has entered room:", room)
+
+        end
+
+        
+
+        entity.Debug.OnLookAtEntity = function(entityTable)
+
+            print("Player has looked at entity:", entityTable.Model)
+
+        end
+
+        
+
+        entity.Debug.OnDeath = function(entityTable)
+
+            warn("Player has died.")
+
+        end
+
+        ------------------------
+
+        
+
+        -- Run the created entity
+
+        Creator.runEntity(entity)
+
+        
+
+    end
+
+})
+
+DOORS:AddButton({
+
+    Name = "刷新Ambush",
+
+    Callback = function ()
+
+     loadstring(game:HttpGet("https://pastebin.com/raw/saRYAPsY"))()
+
+    end
+
+})
+
+DOORS:AddButton({
+
+    Name = "刷新Halt",
+
+    Callback = function ()
+
+        local Data = require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game)
+
+        require(game.ReplicatedStorage.ClientModules.EntityModules.Shade).stuff(Data, workspace.CurrentRooms[tostring(game.ReplicatedStorage.GameData.LatestRoom.Value)])
+
+    
+
+    end
+
+})
+
+DOORS:AddButton({
+
+    Name = "刷新Glitch",
+
+    Callback = function ()
+
+        local Data = require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game)
+
+        require(game.ReplicatedStorage.ClientModules.EntityModules.Glitch).stuff(Data, workspace.CurrentRooms[tostring(game.ReplicatedStorage.GameData.LatestRoom.Value)])
+
+    
+
+    end
+
+})
+
+DOORS:AddButton({
+
+    Name = "刷新A-120",
+
+    Callback = function ()
+
+        local EntitySpawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/dreadmania/Scripts/main/Spawner_V2.lua"))()
+
+        local Configuration = {
+
+            Kill = true,
+
+            Speed = 160, 
+
+            Time = 3
+
+        }
+
+        
+
+        EntitySpawner:Spawn("Ambush", Configuration)
+
+    end
+
+})
+
+DOORS:AddButton({
+
+    Name = "刷新失败的Man",
+
+    Callback = function ()
+
+        require(game.StarterGui.MainUI.Initiator.Main_Game.RemoteListener.Modules.Screech)(require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game),
+
+    workspace.CurrentRooms[game.Players.LocalPlayer:GetAttribute("CurrentRoom")])
+
+    
+
+    end
+
+})
+
+DOORS:AddButton({
+
+    Name = "全成就",
+
+    Callback = function ()
+
+        local Data = require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game)
+
+        for i,v in pairs(require(game.ReplicatedStorage.Achievements)) do
+
+            spawn(function()
+
+                require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game.RemoteListener.Modules.AchievementUnlock)(nil, i)
+
+            end)
+
+        end
+
+    end
+
+})
+
+DOORS:AddButton({
+
+    Name = "破坏灯",
+
+    Callback = function ()
+
+        local Data = require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game)
+
+        firesignal(game.ReplicatedStorage.Bricks.UseEventModule.OnClientEvent, "breakLights", workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value], 0.416, 60) 
+
+    end
+
+})
+
+DOORS:AddButton({
+
+    Name = "灯闪烁",
+
+    Callback = function ()
+
+        local Data = require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game)
+
+        firesignal(game.ReplicatedStorage.Bricks.UseEventModule.OnClientEvent, "flickerLights", game.ReplicatedStorage.GameData.LatestRoom.Value, 1) 
+
+    end
+
+})
+
+DOORS:AddButton({
+
+    Name = "SEEK眼",
+
+    Callback = function ()
+
+        local Data = require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game)
+
+        require(game:GetService("ReplicatedStorage").ClientModules.EntityModules.Seek).tease(nil, workspace.CurrentRooms:WaitForChild(game.ReplicatedStorage.GameData.LatestRoom.Value), 14, 1665596753, true)
+
+    end
+
+})
+
+DOORS:AddButton({
+
+    Name = "红房",
+
+    Callback = function ()
+
+        local v1 = require(game.ReplicatedStorage.ClientModules.Module_Events)
+
+        local room = workspace.CurrentRooms[game.Players.LocalPlayer:GetAttribute("CurrentRoom")]
+
+        local seconds = 1000000
+
+        v1.tryp(workspace.CurrentRooms[game.Players.LocalPlayer:GetAttribute("CurrentRoom")], seconds)
+
+    end
+
+})
+
+local EnabledEntities={
+
+    EnabledScreech=false,
+
+    EnabledHalt=false,
+
+    EnabledGlitch=false,
+
+}
+
+DOORS:AddToggle({
+
+    Name = "Screech无伤害",
+
+	CurrentValue = false,	Flag = "IgnoreScreech",
+
+	Callback = function(Value)
+
+        EnabledEntities.EnabledScreech = Value
+
+	end
+
+})
+
+DOORS:AddToggle({
+
+    Name = "Glitch无伤害",
+
+	CurrentValue = false,
+
+	Flag = "IgnoreGlitch",
+
+	Callback = function(Value)
+
+        EnabledEntities.EnabledGlitch = Value
+
+	end
+
+})
+
+DOORS:AddToggle({
+
+    Name = "Halt无伤害",
+
+	CurrentValue = false,
+
+	Flag = "IgnoreHalt",
+
+	Callback = function(Value)
+
+        EnabledEntities.EnabledHalt = Value
+
+	end
+
+})
+
+workspace.Camera.ChildAdded:Connect(function(c)
+
+    if c.Name == "Screech" then
+
+        wait(0.1)
+
+        if EnabledEntities.EnabledScreech then
+
+            removeDebris(c, 0)
+
+        end
+
+    end
+
+    if c.Name == "Shade" then
+
+        wait(.1)
+
+        if EnabledEntities.EnabledHalt then
+
+            removeDebris(c, 0)
+
+        end
+
+    end
+
+end)
+
+workspace.CurrentRooms.ChildAdded:Connect(function()
+
+    if EnabledEntities.EnabledGlitch then
+
+        local currentRoom=game.Players.LocalPlayer:GetAttribute("CurrentRoom")
+
+        local roomAmt=#workspace.CurrentRooms:GetChildren()
+
+        local lastRoom=game.ReplicatedStorage.GameData.LatestRoom.Value
+
+    
+
+        if roomAmt>=4 and currentRoom<lastRoom-3 then
+
+            game.Players.LocalPlayer.Character:PivotTo(CFrame.new(lastRoom.RoomStart.Position))
+
+        end    
+
+    end
+
+end)
+
+DOORS:AddButton({
+
+    Name = "清除所有刷新实体",
+
+	CurrentValue = false,	Flag = "removeEntities",
+
+	Callback = function(Value)
+
+        -- im so good at the game
+
+        removeEntities=Value
+
+        if Value==true then
+
+            rmEntitiesConTwo=workspace.CurrentRooms.ChildAdded:Connect(function(c)
+
+                if c:WaitForChild"Base" then
+
+                    task.spawn(function()
+
+                        local p=Instance.new("ParticleEmitter", c.Base)
+
+                        p.Brightness=500
+
+                        p.Color=ColorSequence.new(Color3.fromRGB(0,80,255))
+
+                        p.LightEmission=10000
+
+                        p.LightInfluence=0
+
+                        p.Orientation=Enum.ParticleOrientation.FacingCamera
+
+                        p.Size=NumberSequence.new(0.2)
+
+                        p.Squash=NumberSequence.new(0)
+
+                        p.Texture="rbxassetid://2581223252"
+
+                        p.Transparency=NumberSequence.new(0)
+
+                        p.ZOffset=0
+
+                        p.EmissionDirection=Enum.NormalId.Top
+
+                        p.Lifetime=NumberRange.new(2.5)
+
+                        p.Rate=500
+
+                        p.Rotation=NumberRange.new(0)
+
+                        p.RotSpeed=NumberRange.new(0)
+
+                        p.Speed=10
+
+                        p.SpreadAngle=Vector2.new(0,0)
+
+                        p.Shape=Enum.ParticleEmitterShape.Box
+
+                        p.ShapeInOut=Enum.ParticleEmitterShapeInOut.Outward
+
+                        p.ShapeStyle=Enum.ParticleEmitterShapeStyle.Volume
+
+                        p.Drag=0
+
+                    end)
+
+                end
+
+            end)
+
+            rmEntitiesCon=workspace.ChildAdded:Connect(function(c)
+
+                if c.Name=="Lookman" then
+
+                    repeat task.wait() until c.Core.Attachment.Eyes.Enabled==true
+
+                    task.wait(.02)
+
+                    local door=workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value]:WaitForChild"Door"
+
+                    local lp=game.Players.LocalPlayer
+
+                    local char=lp.Character
+
+                    local pos=char.PrimaryPart.CFrame
+
+                    char:PivotTo(door.Hidden.CFrame)
+
+                    if door:FindFirstChild"ClientOpen" then door.ClientOpen:FireServer() end
+
+                    task.wait(.2)
+
+                    local HasKey = false
+
+                    for i,v in ipairs(door.Parent:GetDescendants()) do
+
+                        if v.Name == "KeyObtain" then
+
+                            HasKey = v
+
+                        end
+
+                    end
+
+                    if HasKey then
+
+                        game.Players.LocalPlayer.Character:PivotTo(CFrame.new(HasKey.Hitbox.Position))
+
+                        wait(0.3)
+
+                        fireproximityprompt(HasKey.ModulePrompt,0)
+
+                        game.Players.LocalPlayer.Character:PivotTo(CFrame.new(door.Door.Position))
+
+                        wait(0.3)
+
+                        fireproximityprompt(door.Lock.UnlockPrompt,0)
+
+                        return
+
+                    end
+
+                    char:PivotTo(pos)
+
+                end
+
+            end)
+
+            local val=game.ReplicatedStorage.GameData.ChaseStart
+
+            local savedVal=val.Value
+
+            task.spawn(function()
+
+                repeat
+
+                    if not game:GetService"Players":GetPlayers()[2] then
+
+                        repeat task.wait() until val.Value~=savedVal
+
+                        savedVal=val.Value
+
+                        repeat task.wait() until workspace.CurrentRooms:FindFirstChild(tostring(val.Value))
+
+                        local room=workspace.CurrentRooms[tostring(val.Value-1)]
+
+                        local thing=loadstring(game:HttpGet"https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors/Door%20Replication/Source.lua")()
+
+                        local newdoor=thing.CreateDoor({CustomKeyNames={"SkellyKey"}, Sign=true, Light=true, Locked=(room.Door:FindFirstChild"Lock" and true or false)})
+
+                        newdoor.Model.Parent=workspace
+
+                        newdoor.Model:PivotTo(room.Door.Door.CFrame)
+
+                        newdoor.Model.Parent=room
+
+                        room.Door:Destroy()
+
+                        thing.ReplicateDoor({Model=newdoor.Model, Config={}, Debug={OnDoorPreOpened=function() end}})
+
+                        return
+
+                    else
+
+                        repeat task.wait() until val.Value~=savedVal
+
+                        savedVal=val.Value
+
+                        repeat task.wait() until workspace.CurrentRooms:FindFirstChild(tostring(val.Value)) and workspace.CurrentRooms:FindFirstChild(tostring(val.Value-2)).Door.Light.Attachment.PointLight.Enabled==true
+
+                        xpcall(function()
+
+                            if removeEntities==true and game.ReplicatedStorage.GameData.ChaseEnd.Value-val.Value<3 and game.ReplicatedStorage.GameData.ChaseStart.Value~=50 then
+
+                                local lp=game.Players.LocalPlayer
+
+                                local char=lp.Character
+
+                                local pos=char.PrimaryPart.CFrame
+
+                                local door=workspace.CurrentRooms[tostring(val.Value)]:WaitForChild("Door")                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+
+        
+
+                                local HasKey = false
+
+                                for i,v in ipairs(door.Parent:GetDescendants()) do
+
+                                    if v.Name == "KeyObtain" then
+
+                                        HasKey = v
+
+                                    end
+
+                                end
+
+                                if HasKey then
+
+                                    game.Players.LocalPlayer.Character:PivotTo(CFrame.new(HasKey.Hitbox.Position))
+
+                                    wait(0.3)
+
+                                    fireproximityprompt(HasKey.ModulePrompt,0)
+
+                                    game.Players.LocalPlayer.Character:PivotTo(CFrame.new(door.Door.Position))
+
+                                    wait(0.3)
+
+                                    fireproximityprompt(door.Lock.UnlockPrompt,0)
+
+                                    return
+
+                                end
+
+                                char:PivotTo(door.Hidden.CFrame)
+
+                                if door:FindFirstChild"ClientOpen" then door.ClientOpen:FireServer() end
+
+                                task.wait(.2)
+
+                                char:PivotTo(pos)
+
+                            end
+
+                        end, function(...) print(...) end)
+
+                    end
+
+                until removeEntities==false
+
+            end)
+
+            if not game:GetService"Players":GetPlayers()[2] and removeEntities==true then
+
+                repeat task.wait() until workspace.CurrentRooms:FindFirstChild(tostring(savedVal))
+
+                local room=workspace.CurrentRooms[tostring(savedVal)]
+
+                local thing=loadstring(game:HttpGet"https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors/Door%20Replication/Source.lua")()
+
+                local newdoor=thing.CreateDoor({CustomKeyNames={"SkellyKey"}, Sign=true, Light=true})
+
+                newdoor.Model.Parent=workspace
+
+                newdoor.Model:PivotTo(room.Door.Door.CFrame)
+
+                newdoor.Model.Parent=room
+
+                room.Door:Destroy()
+
+                thing.ReplicateDoor({Model=newdoor.Model, Config={}, Debug={OnDoorPreOpened=function() end}})
+
+            else
+
+                repeat task.wait() until workspace.CurrentRooms:FindFirstChild(tostring(savedVal)) and workspace.CurrentRooms:FindFirstChild(tostring(savedVal-2)).Door.Light.Attachment.PointLight.Enabled==true
+
+                if removeEntities==true then
+
+                    local lp=game.Players.LocalPlayer
+
+                    local char=lp.Character
+
+                    local pos=char.PrimaryPart.CFrame
+
+                    local door=workspace.CurrentRooms[tostring(savedVal)]:WaitForChild("Door")
+
+        
+
+                    local HasKey = false
+
+                    for i,v in ipairs(door.Parent:GetDescendants()) do
+
+                        if v.Name == "KeyObtain" then
+
+                            HasKey = v
+
+                        end
+
+                    end
+
+                    if HasKey then
+
+                        game.Players.LocalPlayer.Character:PivotTo(CFrame.new(HasKey.Hitbox.Position))
+
+                        wait(0.3)
+
+                        fireproximityprompt(HasKey.ModulePrompt,0)
+
+                        game.Players.LocalPlayer.Character:PivotTo(CFrame.new(door.Door.Position))
+
+                        wait(0.3)
+
+                        fireproximityprompt(door.Lock.UnlockPrompt,0)
+
+                        return
+
+                    else 
+
+                    char:PivotTo(door.Hidden.CFrame)
+
+                    if door:FindFirstChild"ClientOpen" then door.ClientOpen:FireServer() end
+
+                    task.wait(.2)
+
+                    char:PivotTo(pos) end
+
+                end
+
+            end
+
+        else rmEntitiesCon:Disconnect() rmEntitiesConTwo:Disconnect() end
+
+	end
+
+})
+
+DOORS:AddButton({
+
+    Name = "全成就",
+
+    Callback = function ()
+
+        local Data = require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game)
+
+        for i,v in pairs(require(game.ReplicatedStorage.Achievements)) do
+
+            spawn(function()
+
+                require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game.RemoteListener.Modules.AchievementUnlock)(nil, i)
+
+            end)
+
+        end
+
+    end
+
+})
+
+DOORS:AddTextbox({
+
+	Name = "金币",	PlaceholderText = game.Players.LocalPlayer.PlayerGui.PermUI.Topbar.Knobs.Text,
+
+	RemoveTextAfterFocusLost = false,
+
+	Callback = function(Text)
+
+        require(game.ReplicatedStorage.ReplicaDataModule).event.Knobs:Fire(tonumber(Text))
+
+	end
+
+})
+
+DOORS:AddTextbox({
+
+	Name = "复活",
+
+	PlaceholderText = game.Players.LocalPlayer.PlayerGui.PermUI.Topbar.Revives.Text,
+
+	RemoveTextAfterFocusLost = false,
+
+	Callback = function(Text)
+
+        require(game.ReplicatedStorage.ReplicaDataModule).event.Revives:Fire(tonumber(Text))
+
+	end
+
+})
+
+DOORS:AddTextbox({
+
+	Name = "加成",
+
+	PlaceholderText = game.Players.LocalPlayer.PlayerGui.PermUI.Topbar.Boosts.Text,
+
+	RemoveTextAfterFocusLost = false,
+
+	Callback = function(Text)
+
+        require(game.ReplicatedStorage.ReplicaDataModule).event.Boosts:Fire(tonumber(Text))
+
+	end
+
+})
+
+local DOORS2 = Window:MakeTab({
+
+  Name = "DOORS2",
+
+  Icon = "rbxassetid://4483345998",
+
+  PremiumOnly = false
+
+})
+
+DOORS2:AddToggle({
+
+	Name = "立即互动",
+
+	Default = false,
+
+    Flag = "InstantToggle",
+
+    Save = true
+
+})
+
+DOORS2:AddButton({
+
+	Name = "没有 jumpscares",
+
+	Callback = function()
+
+        pcall(function()
+
+            game:GetService("ReplicatedStorage").Bricks.Jumpscare:Destroy()
+
+        end)
+
+  	end    
+
+})
+
+DOORS2:AddToggle({
+
+	Name = "自动躲避Rush/Ambush",
+
+	CurrneValue = false,
+
+    Flag = "AvoidRushToggle",
+
+    Save = true
+
+})
+
+DOORS2:AddToggle({
+
+	Name = "没有 Screech",
+
+	CurrentValue = false,
+
+    Flag = "ScreechToggle",
+
+    Save = true
+
+})
+
+DOORS2:AddToggle({
+
+	Name = "心跳不输",
+
+	CurrentValue = false,
+
+    Flag = "HeartbeatWin",
+
+    Save = true
+
+})
+
+DOORS2:AddToggle({
+
+	Name = "预判追逐战",
+
+	CurrentValue = false,
+
+    Flag = "PredictToggle" ,
+
+    Save = true
+
+})
+
+DOORS2:AddToggle({
+
+	Name = "刷新实体时通知",
+
+	CurrentValue = false,
+
+    Flag = "MobToggle" ,
+
+    Save = true
+
+})
+
+DOORS2:AddButton({
+
+	Name = "跳过电池盒",
+
+	Callback = function()
+
+        game:GetService("ReplicatedStorage").Bricks.EBF:FireServer()
+
+  	end    
+
+})
+
+DOORS2:AddButton({
+
+	Name = "跳过50关",
+
+	Callback = function()
+
+        local CurrentDoor = workspace.CurrentRooms[tostring(LatestRoom+1)]:WaitForChild("Door")
+
+        game.Players.LocalPlayer.Character:PivotTo(CF(CurrentDoor.Door.Position))
+
+  	end    
+
+})
+
+DOORS2:AddToggle({
+
+	Name = "头光",	CurrentValue = false,
+
+    Flag = "ToggleHeadlight",
+
+    Callback = function(Value)
+
+        pcl.Enabled = Value
+
+    end
+
+})
+
+game:GetService("RunService").RenderStepped:Connect(function()
+
+    pcall(function()
+
+        if game.Players.LocalPlayer.Character.Humanoid.MoveDirection.Magnitude > 0 then
+
+            game.Players.LocalPlayer.Character:TranslateBy(game.Players.LocalPlayer.Character.Humanoid.MoveDirection * TargetWalkspeed/50)
+
+        end
+
+    end)
+
+end)
+
+game:GetService("ProximityPromptService").PromptButtonHoldBegan:Connect(function(prompt)
+
+    if Rayfield.Flags["InstantToggle"].Value == true then
+
+        fireproximityprompt(prompt)
+
+    end
+
+end)
+
+local old
+
+old = hookmetamethod(game,"__namecall",newcclosure(function(self,...)
+
+    local args = {...}
+
+    local method = getnamecallmethod()
+
+    
+
+    if tostring(self) == 'Screech' and method == "FireServer" and Rayfield.Flags["ScreechToggle"].Value == true then
+
+        args[1] = true
+
+        return old(self,unpack(args))
+
+    end
+
+    if tostring(self) == 'ClutchHeartbeat' and method == "FireServer" and Rayfield.Flags["HeartbeatWin"].Value == true then
+
+        args[2] = true
+
+        return old(self,unpack(args)).infiniteyield
+
+    end
+
+    
+
+    return old(self,...)
+
+end))
+
+workspace.CurrentCamera.ChildAdded:Connect(function(child)
+
+    if child.Name == "Screech" and Rayfield.Flags["ScreechToggle"].Value == true then
+
+        child:Destroy()
+
+    end
+
+end)
+
+local NotificationCoroutine = coroutine.create(function()
+
+    LatestRoom.Changed:Connect(function()
+
+        if Rayfield.Flags["PredictToggle"].Value == true then
+
+            local n = ChaseStart.Value - LatestRoom.Value
+
+            if 0 < n and n < 4 then
+
+                Rayfield:MakeNotification({
+
+                    Name = "DOORS2.GL",
+
+                    Content = "剩余" .. tostring(n) .. " 刷新实体.",
+
+                    Time = 5
+
+                })
+
+            end
+
+        end
+
+        if Rayfield.Flags["BookToggle"].Value == true then
+
+            if LatestRoom.Value == 50 then
+
+                coroutine.resume(BookCoroutine)
+
+            end
+
+        end
+
+        if Rayfield.Flags["FigureToggle"].Value == true then
+
+            if LatestRoom.Value == 50 then
+
+                coroutine.resume(EntityCoroutine)
+
+            end
+
+        end
+
+    end)
+
+    workspace.ChildAdded:Connect(function(inst)
+
+        if inst.Name == "RushMoving" and Rayfield.Flags["MobToggle"].Value == true then
+
+            if Rayfield.Flags["AvoidRushToggle"].Value == true then
+
+                Rayfield:MakeNotification({
+
+                    Name = "DOORS2.GL",
+
+                    Content = "正在躲避Rush中",
+
+                    Time = 5
+
+                })
+
+                local OldPos = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+
+                local con = game:GetService("RunService").Heartbeat:Connect(function()
+
+                    game.Players.LocalPlayer.Character:MoveTo(OldPos + Vector3.new(0,20,0))
+
+                end)
+
+                
+
+                inst.Destroying:Wait()
+
+                con:Disconnect()
+
+                game.Players.LocalPlayer.Character:MoveTo(OldPos)
+
+            else
+
+                Rayfield:MakeNotification({
+
+                    Name = "DOORS2.GL",
+
+                    Content = "Rush已刷新",
+
+                    Time = 5
+
+                })
+
+            end
+
+        elseif inst.Name == "AmbushMoving" and Rayfield.Flags["MobToggle"].Value == true then
+
+            if Rayfield.Flags["AvoidRushToggle"].Value == true then
+
+                Rayfield:MakeNotification({
+
+                    Name = "DOORS2.GL",
+
+                    Content = "正在躲避Ambush中",
+
+                    Time = 5
+
+                })
+
+                local OldPos = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+
+                local con = game:GetService("RunService").Heartbeat:Connect(function()
+
+                    game.Players.LocalPlayer.Character:MoveTo(OldPos + Vector3.new(0,20,0))
+
+                end)
+
+                
+
+                inst.Destroying:Wait()
+
+                con:Disconnect()
+
+                
+
+                game.Players.LocalPlayer.Character:MoveTo(OldPos)
+
+            else
+
+                Rayfield:MakeNotification({
+
+                    Name = "DOORS2.GL",
+
+                    Content = "Ambush已刷新",
+
+                    Time = 5
+
+                })
+
+            end
+
+        end
+
+    end)
+
+end)
